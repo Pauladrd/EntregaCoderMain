@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    {% if request.user.is_authenticated %}
+    <h2>Agregar nueva fecha de inicio</h2>
+    <form action="" method="POST">{% csrf_token %}
+        {{ formulario.as_p }}
+        <input class="form-control btn btn-primary" type="submit" value="Agregar Fecha">
+    </form>
+    <br>
+    {% endif %}
+    <h2>Fechas de inicio</h2>
+    <hr>
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Fechas de inicio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fecha in fechas %}
+            <tr>
+                <td>{{fecha.dia}}/{{fecha.mes}}/{{fecha.año}}</td>
+            </tr>
+            {% endfor %}
+
+            
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

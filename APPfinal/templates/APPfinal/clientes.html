@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    {% if request.user.is_authenticated %}
+    <h2>Agregar nuevo cliente</h2>
+    <form action="" method="POST">{% csrf_token %}
+        {{ formulario.as_p }}
+        <input class="form-control btn btn-primary" type="submit" value="Agregar Cliente">
+    </form>
+    <br>
+    <br>
+    {% endif %}
+    <h2>Clientes registrados</h2>
+    <hr>
+    <form action="" method="POST">{% csrf_token %}
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>E-mail</th>
+                    <th>Fecha de Ingreso</th>
+                    <th>Documentos Completos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td><a href="{% url 'ver-cliente' cliente.id %}">{{cliente.apellido}}, {{cliente.nombre}}</a></td>
+                    <td>{{cliente.email|lower}}</td>
+                    <td>{{cliente.fecha_creado}}</td>
+                    <td>{% if cliente.documentos %}Si{% else %}No{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+

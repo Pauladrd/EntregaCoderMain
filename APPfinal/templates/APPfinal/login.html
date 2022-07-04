@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+        <form action="" method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <input class="form-control btn btn-primary" type="submit" value="Ingresar">
+        </form>
+       
+</div>
+
+
+{% endblock content %}

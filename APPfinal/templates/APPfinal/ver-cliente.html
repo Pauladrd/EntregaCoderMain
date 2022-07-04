@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    <h2>{{cliente.nombre}} {{cliente.apellido}}</h2>
+    <hr>
+    <form action="" method="POST">{% csrf_token %}
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" class="form-control" value="{{cliente.nombre}}"><br>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" class="form-control" value="{{cliente.apellido}}"><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" value="{{cliente.email}}"><br>
+        <label for="documentos">Cumple con todos los documentos?</label>
+        <input type="checkbox" name="documentos"{% if cliente.documentos %} checked{% endif %}><br><br>
+        <input type="submit" class="btn btn-block btn-success" value="Modificar">
+    </form>
+</div>
+
+{% endblock %}
+

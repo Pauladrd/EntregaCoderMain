@@ -1,0 +1,47 @@
+
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    {% if request.user.is_authenticated %}
+    <h2>Agregar nueva documentación requerida</h2>
+    <form action="" method="POST">{% csrf_token %}
+        {{ formulario.as_p }}
+        <input class="form-control btn btn-primary" type="submit" value="Agregar Documento">
+    </form>
+    <br>
+    {% endif %}
+    <h2>Documentación requerida</h2>
+    <hr>
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Tipo de documento</th>
+                <th>Formato</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for documento in documentos %}
+            <tr>
+                <td>{{documento.documento}}</td>
+                <td>{{documento.tipo}}</td>
+            </tr>
+            {% endfor %}
+
+            
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

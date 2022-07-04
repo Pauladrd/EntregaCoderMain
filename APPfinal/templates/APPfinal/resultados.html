@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    {% if request.user.is_authenticated %}
+    <h2>Resultados de su búsqueda</h2>
+    <hr>
+    {% for resultado in resultados %}
+
+        {% if resultado.cliente.all %}
+            <h3>Clientes</h3>
+            {% for r in resultado.cliente %}
+                {{r.nombre}} {{r.apellido}} - {{r.email}} <br>
+            {% endfor %}
+        {% endif %}
+
+        {% if resultado.tramite.all %}
+            <h3>Trámites</h3>
+            {% for r in resultado.tramite %}
+                {{r.tramite}} <br>
+            {% endfor %}
+        {% endif %}
+        
+        {% if resultado.documentacion.all %}
+            <h3>Documentación</h3>
+            {% for r in resultado.documentacion %}
+                {{r.documento}} - {{r.tipo}} <br>
+            {% endfor %}
+        {% endif %}
+
+    {% endfor %}
+    {% else %}
+    <h1>Debe estar registrado para ver los resultados de una búsqueda</h1>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
