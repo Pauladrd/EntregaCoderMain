@@ -9,7 +9,7 @@ Se me ocurrio hacer este trabajo centrando las consignas en opciones de gestoria
 use la base del trabajo anterior que ya habia hecho y fui modificando e incorporando cambios. Me ayude con chats de compañeros y tambien pedi ayuda a un compañero del curso para conceptos que no podia incorporar al proyecto - Luego intente la sistematización de los datos de los tramites, clientes y pagos para ordenar el trabajo en base a esos criterios y crear una base de datos real y util para poder hacer crecer la oferta de trabajos a ofrecer
 
 se puede ver el funcionamiento en el siguiente video:
-https://youtu.be/4_tYrpYL75Y
+https://youtu.be/G1-D2TqWuek
 
 # El mayor desafio 
 el desafio mas importente fue superar los errores en la implementación de los conocimientos vistos en clase con resiliencia
